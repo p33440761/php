@@ -1,0 +1,18 @@
+轉值
+js:
+parseInt();  轉換成數值
+parseFloat();   轉成浮點數
+"+  轉成字串
+
+php:
+intval();   
+floatval();
+stringval();
+
+
+
+
+字串相接
+php:
+用. 
+ex: echo ($a + $b) . '<br>'; 
