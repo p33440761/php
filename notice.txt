@@ -16,3 +16,6 @@ stringval();
 php:
 用. 
 ex: echo ($a + $b) . '<br>'; 
+
+
+胖瘦箭頭 雙引號 單引號 轉換格式
