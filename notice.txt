@@ -19,3 +19,7 @@ ex: echo ($a + $b) . '<br>';
 
 
 胖瘦箭頭 雙引號 單引號 轉換格式
+
+
+箭頭
+https://bongbonggun.blogspot.com/2018/03/php.html

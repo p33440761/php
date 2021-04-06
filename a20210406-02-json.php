@@ -22,8 +22,13 @@ $persons = [
     ]
 ];
 //轉為json js用Json.stringify
-echo json_encode($persons);
+// echo json_encode($persons);
+
+
 //將中文字亂碼轉為正常
-// echo json_encode($persons, JSON_UNESCAPED_UNICODE);
+echo json_encode([
+    'get' => $_GET,
+    'person' => $persons
+], JSON_UNESCAPED_UNICODE);
 // header('Content-Type: application/json');
                 //前面有空白

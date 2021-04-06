@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <button class="btn btn-primary" onclick="loadData()">load</button>
+
+        <table class="table table-striped">
+            <thead>
+                <tr>
+
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Gender</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="./bootstrap/css/bootstrap.css"></script>
+    <script>
+        const rowTpl = o => {
+            return `<tr>
+            <td>${o['name']}</td>
+            <td>${o['age']}</td>
+            <td>${o['gender']}</td>
+            </tr>`;
+
+        }
+        function loadData() {
+            $.get('a20210401-07-json.php'), function (data) {
+                console.log(data);
+                // $('tbody').append(rowTpl(data[0]));
+                $('tbody').html('');
+                data.forEach(el => {
+                    $('tbody').append(rowTpl(el))
+                })
+            }
+        }
+    </script>
+</body>
+
+</html>
