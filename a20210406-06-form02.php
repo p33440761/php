@@ -12,7 +12,10 @@
             <form name="form1" method="post">
                 <div class="form-group">
                     <label for="email">Email address</label>
+                    
+                    <!-- 讓資料可以持續留在畫面 -->
                     <input type="email" class="form-control" id="email" value="<?= empty($_POST['email']) ? '' : htmlentities($_POST['email']) ?>" name="email">
+                    <!-- htmlentities所有具有HTML字符實體等效項的字符都將轉換為這些實體 -->
 
                 </div>
                 <div class="form-group">

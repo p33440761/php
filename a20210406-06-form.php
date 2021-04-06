@@ -5,13 +5,16 @@
     <div class="row">
         <pre>
             <?php print_r($_POST)  ?>
+            <!-- 因為method為post 這邊也要寫$_POST -->
         </pre>
     </div>
     <div class="row">
         <div class="col-md-6">
-            <form method="post">
+            <form method="post" action="">
+                <!-- 用method設定拿取/傳送的方法 action為傳送到的目的地 -->
                 <div class="form-group">
                     <label for="email">Email address</label>
+                    <!-- 表單重要的屬性是name -->
                     <input type="email" class="form-control" id="email" name="email">
 
                 </div>
