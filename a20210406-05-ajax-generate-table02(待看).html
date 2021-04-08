@@ -44,14 +44,15 @@
 
         }
         function loadData() {
-            $.get('a20210401-07-json.php'), function (data) {
+            $.get('a20210401-07-json.php', function (data) {
                 console.log(data);
                 // $('tbody').append(rowTpl(data[0]));
                 $('tbody').html('');
                 data.forEach(el => {
-                    $('tbody').append(rowTpl(el))
-                })
-            }
+                    $('tbody').append(rowTpl(el));
+                });
+
+            }, 'json');
         }
     </script>
 </body>

@@ -31,13 +31,14 @@
     <script src="./bootstrap/css/bootstrap.css"></script>
     <script>
         const rowTpl = o => {
-            return `<tr>
+            return `
+        <tr>
             <td>${o['name']}</td>
             <td>${o['age']}</td>
             <td>${o['gender']}</td>
-            </tr>`;
+        </tr>`;
 
-        }
+        };
         function loadData() {
             $.get('a20210401-07-json.php'), function (data) {
                 console.log(data);
