@@ -9,6 +9,7 @@ $totalRows = $pdo->query($t_sql)->fetch(PDO::FETCH_NUM)[0];
 $perPage = 5;
 $totalPages = ceil($totalRows / $perPage);
 
+// ??????
 $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
 if ($page <= 1) $page = 1;
 if ($page >= $totalPages) $page = $totalPages;
