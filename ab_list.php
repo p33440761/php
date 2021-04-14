@@ -55,26 +55,30 @@ $rows = $stmt->fetchAll();
     <table class="table table-striped">
         <thead>
             <tr>
+                <th scope="col"><i class="fas fa-trash-alt"></i></th>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Mobile</th>
                 <th scope="col">Birthday</th>
                 <th scope="col">Address</th>
-                <th scope="col"><i class="fas fa-trash-alt"></i></th>
+                <th scope="col"><i class="fas fa-edit"></i></th>
+
             </tr>
         </thead>
         <tbody>
             <?php foreach ($rows as $r) : ?>
                 <tr>
+                    <td class="trash"><a href="javascript: delete_it(<?= $r['sid'] ?>)   "><i class="fas fa-trash-alt"></i></a></td>
                     <td><?= $r['sid'] ?></td>
                     <td><?= $r['name'] ?></td>
                     <td><?= $r['email'] ?></td>
                     <td><?= $r['mobile'] ?></td>
                     <td><?= $r['birthday'] ?></td>
                     <td><?= $r['address'] ?></td>
+                    <td><a href="ab-edit.php?sid=<?= $r['sid'] ?>"><i class="fas fa-edit"></i></a></td>
                     <!-- ?href="javascript:" -->
-                    <td class="trash"><a href="javascript:"><i class="fas fa-trash-alt"></i></a></td>
+
                 </tr>
             <?php endforeach; ?>
         </tbody>
@@ -82,8 +86,10 @@ $rows = $stmt->fetchAll();
 </div>
 <?php include __DIR__ . '/parts/scripts.php' ?>
 <script>
-    $('.trash').click(function() {
-        $(this).closest('tr').remove();
-    });
+    function delete_it(sid) {
+        if (confirm(`確定要刪除第${sid} 筆資料嗎?`)) {
+            location.href = 'ab-delete.php?sid=' + sid;
+        }
+    }
 </script>
 <?php include __DIR__ . '/parts/html-foot.php' ?>
