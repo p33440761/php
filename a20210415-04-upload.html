@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 要上傳檔案一定要下enctype屬性 -->
+    <form action="a20210415-03-upload.php" method="post" enctype="multipart/form-data">
+        <!-- 資料上傳預設為一個 若要多選 要下multiple -->
+        <!-- name="avatar" 此處一定要下name 屬性 且avatar跟後端唯一樣名字 -->
+        <input type="file" name="avatar">
+        <br>
+        <input type="submit">
+    </form>
+</body>
+
+</html>
