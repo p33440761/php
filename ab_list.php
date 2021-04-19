@@ -40,8 +40,10 @@ $rows = $stmt->fetchAll();
                             <i class="fas fa-arrow-circle-left"></i>
                         </a>
                     </li>
-                    <?php for ($i = 1; $i <= $totalPages; $i++) : ?>
-                        <li class="page-item <?= $page == $i ? 'active' : '' ?>"><a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a></li>
+                    <?php for ($i = $page - 2; $i <= $page + 3; $i++) :
+                        if ($i >= 1 && $i <= $totalPages) :   ?>
+                            <li class="page-item <?= $page == $i ? 'active' : '' ?>"><a class="page-link" href="?page=<?= $i ?>"><?= $i ?></a></li>
+                        <?php endif; ?>
                     <?php endfor; ?>
                     <li class="page-item <?= $page >= $totalPages ? 'disabled' : '' ?>">
                         <a class="page-link" href="?page=<?= $page + 1 ?>">
